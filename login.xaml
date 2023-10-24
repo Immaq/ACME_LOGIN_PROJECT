@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="login" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="login" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="loginPassword" Type="InArgument(x:String)" />
     <x:Property Name="loginEmail" Type="InArgument(x:String)" />
@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>636.6666666666666,3668</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>762.6666666666666,4343.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -108,25 +108,28 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="login and downloading file" sap:VirtualizedContainerService.HintSize="646.6666666666666,3603.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="login and downloading file" sap:VirtualizedContainerService.HintSize="772.6666666666666,4278.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: ACME System 1 - Log In" sap:VirtualizedContainerService.HintSize="584.6666666666666,3492.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsCVEnabled="False" ScopeGuid="620afafe-fcd2-4fb8-9df3-466f2f4ea49e" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: ACME System 1 - Log In" sap:VirtualizedContainerService.HintSize="710.6666666666666,4168" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsCVEnabled="False" ScopeGuid="620afafe-fcd2-4fb8-9df3-466f2f4ea49e" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="550.6666666666666,3273.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="676.6666666666666,3948.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="logoutExists" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <TryCatch DisplayName="Try Catch- input login email address" sap:VirtualizedContainerService.HintSize="488.6666666666667,508.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch DisplayName="Try Catch- input login email address" sap:VirtualizedContainerService.HintSize="614.6666666666666,508.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <TryCatch.Try>
                 <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Email'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="620afafe-fcd2-4fb8-9df3-466f2f4ea49e" Text="[loginEmail]" Version="V3">
                   <uix:NTypeInto.Target>
@@ -146,7 +149,7 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                     </ActivityAction.Argument>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Error occurred &quot;]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,57.333333333333336" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Error occurred &quot;]" />
                   </ActivityAction>
                 </Catch>
                 <Catch x:TypeArguments="uc:ElementNotFoundException" sap:VirtualizedContainerService.HintSize="404.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_5">
@@ -160,7 +163,7 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="uc:ElementNotFoundException" Name="exception" />
                     </ActivityAction.Argument>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Error occured: email input field not found&quot;]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,57.333333333333336" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Error occured: email input field not found&quot;]" />
                   </ActivityAction>
                 </Catch>
                 <Catch x:TypeArguments="ui:SelectorNotFoundException" sap:VirtualizedContainerService.HintSize="404.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_6">
@@ -174,12 +177,12 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="ui:SelectorNotFoundException" Name="exception" />
                     </ActivityAction.Argument>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Error occured: Selector not found&quot;]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,57.333333333333336" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Error occured: Selector not found&quot;]" />
                   </ActivityAction>
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <TryCatch DisplayName="Try Catch- type in login password" sap:VirtualizedContainerService.HintSize="488.6666666666667,508.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+            <TryCatch DisplayName="Try Catch- type in login password" sap:VirtualizedContainerService.HintSize="614.6666666666666,508.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_2">
               <TryCatch.Try>
                 <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="620afafe-fcd2-4fb8-9df3-466f2f4ea49e" Text="[loginPassword]" Version="V3">
                   <uix:NTypeInto.Target>
@@ -199,7 +202,7 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="" />
                     </ActivityAction.Argument>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Error occured: &quot;]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,57.333333333333336" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Error occured: &quot;]" />
                   </ActivityAction>
                 </Catch>
                 <Catch x:TypeArguments="ui:SelectorNotFoundException" sap:VirtualizedContainerService.HintSize="404.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
@@ -213,7 +216,7 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="ui:SelectorNotFoundException" Name="exception" />
                     </ActivityAction.Argument>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Error occured: Selector not found&quot;]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,57.333333333333336" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Error occured: Selector not found&quot;]" />
                   </ActivityAction>
                 </Catch>
                 <Catch x:TypeArguments="uc:ElementNotFoundException" sap:VirtualizedContainerService.HintSize="404.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_4">
@@ -227,12 +230,12 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="uc:ElementNotFoundException" Name="exception" />
                     </ActivityAction.Argument>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Error occured: password input field not found&quot;]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,57.333333333333336" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Error occured: password input field not found&quot;]" />
                   </ActivityAction>
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <TryCatch DisplayName="Try Catch- click login button" sap:VirtualizedContainerService.HintSize="488.6666666666667,398.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+            <TryCatch DisplayName="Try Catch- click login button" sap:VirtualizedContainerService.HintSize="614.6666666666666,398.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_5">
               <TryCatch.Try>
                 <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Login'" sap:VirtualizedContainerService.HintSize="334,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="620afafe-fcd2-4fb8-9df3-466f2f4ea49e" Version="V3">
                   <uix:NClick.Target>
@@ -252,125 +255,166 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="ui:SelectorNotFoundException" Name="exception" />
                     </ActivityAction.Argument>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;error occured: selector not found&quot;]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,57.333333333333336" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;error occured: selector not found&quot;]" />
                   </ActivityAction>
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <TryCatch DisplayName="Try Catch- hover over the user options button" sap:VirtualizedContainerService.HintSize="488.6666666666667,445.3333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_3">
-              <TryCatch.Try>
-                <uix:NHover DisplayName="Hover 'User options'" sap:VirtualizedContainerService.HintSize="334,159.33333333333334" HoverTime="3" sap2010:WorkflowViewState.IdRef="NHover_1" ScopeIdentifier="620afafe-fcd2-4fb8-9df3-466f2f4ea49e" Version="V3">
-                  <uix:NHover.Target>
-                    <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/" CvElementArea="205, 481, 307, 75" CvTextArea="297, 503, 153, 30" CvTextArgument="User options" CvType="Button" DesignTimeRectangle="209, 485, 300, 68" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'User options'" FullSelectorArgument="&lt;webctrl parentid='dashmenu' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='dashmenu' tag='BUTTON' type='button' class='btn btn-default btn-lg dropdown-toggle' aaname='                  User options' check:innerText='User options' /&gt;" Guid="36d4314e-1e82-4770-9547-804c31009a38" InformativeScreenshot="dad6d41a237347f3d83360e2d7d37bc7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
-                  </uix:NHover.Target>
-                </uix:NHover>
-              </TryCatch.Try>
-              <TryCatch.Catches>
-                <Catch x:TypeArguments="uc:ElementNotFoundException" sap:VirtualizedContainerService.HintSize="404.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_7">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ActivityAction x:TypeArguments="uc:ElementNotFoundException">
-                    <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="uc:ElementNotFoundException" Name="exception" />
-                    </ActivityAction.Argument>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Error occured: User interface element not found&quot;]" />
-                  </ActivityAction>
-                </Catch>
-                <Catch x:TypeArguments="ui:SelectorNotFoundException" sap:VirtualizedContainerService.HintSize="404.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_8">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ActivityAction x:TypeArguments="ui:SelectorNotFoundException">
-                    <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="ui:SelectorNotFoundException" Name="exception" />
-                    </ActivityAction.Argument>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Error occured: selector not found&quot;]" />
-                  </ActivityAction>
-                </Catch>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_9">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ActivityAction x:TypeArguments="s:Exception">
-                    <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                    </ActivityAction.Argument>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Error occured&quot;]" />
-                  </ActivityAction>
-                </Catch>
-              </TryCatch.Catches>
-            </TryCatch>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="488.6666666666667,538" sap2010:WorkflowViewState.IdRef="TryCatch_4">
-              <TryCatch.Try>
-                <Sequence sap:VirtualizedContainerService.HintSize="450,275.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="5" DisplayName="Click 'Download Client'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="620afafe-fcd2-4fb8-9df3-466f2f4ea49e" Version="V3">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/home" DesignTimeRectangle="540, 429, 373, 39" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'Download Client'" FullSelectorArgument="&lt;webctrl parentid='dashmenu' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='dashmenu' tag='A' type='' class='' aaname='Download Client and Support' check:innerText='Download Client and Support' /&gt;" Guid="1a81da65-5728-43b7-8a1b-493ae1dfdb19" InformativeScreenshot="a52224f15eb323c459010a50ebe639f0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
-                    </uix:NClick.Target>
-                  </uix:NClick>
-                </Sequence>
-              </TryCatch.Try>
-              <TryCatch.Catches>
-                <Catch x:TypeArguments="ui:SelectorNotFoundException" sap:VirtualizedContainerService.HintSize="454.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_11">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ActivityAction x:TypeArguments="ui:SelectorNotFoundException">
-                    <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="ui:SelectorNotFoundException" Name="exception" />
-                    </ActivityAction.Argument>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Error occured: selector not found&quot;]" />
-                  </ActivityAction>
-                </Catch>
-                <Catch x:TypeArguments="uc:ElementNotFoundException" sap:VirtualizedContainerService.HintSize="454.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_12">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ActivityAction x:TypeArguments="uc:ElementNotFoundException">
-                    <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="uc:ElementNotFoundException" Name="exception" />
-                    </ActivityAction.Argument>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Error occured: element not found&quot;]" />
-                  </ActivityAction>
-                </Catch>
-              </TryCatch.Catches>
-            </TryCatch>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="5" DisplayName="Click 'Download'" sap:VirtualizedContainerService.HintSize="488.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="620afafe-fcd2-4fb8-9df3-466f2f4ea49e" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/download-client" CvElementArea="653, 661, 204, 79" CvTextArea="693, 687, 120, 22" CvTextArgument="Download" CvType="Button" DesignTimeRectangle="659, 665, 194, 70" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'Download'" FullSelectorArgument="&lt;webctrl class='btn' parentid='pagetext' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl class='btn' parentid='pagetext' tag='A' type='' aaname='Download' check:innerText='Download' /&gt;" Guid="36c4f2e2-39a2-4b17-a5b0-ccd5760fec5e" InformativeScreenshot="c18d463e909875ed1c68fc3392a0a49b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Download Client and Support' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Log Out'" sap:VirtualizedContainerService.HintSize="488.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="620afafe-fcd2-4fb8-9df3-466f2f4ea49e" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/download-client" CvTextArea="1737, 227, 77, 22" CvTextArgument="Log Out" CvType="Text" DesignTimeRectangle="1716, 200, 120, 75" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'Log Out'" FullSelectorArgument="&lt;webctrl aaname='Log Out' parentid='bs-example-navbar-collapse-1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Log Out' parentid='bs-example-navbar-collapse-1' tag='A' type='' class='' check:innerText='Log Out' /&gt;" Guid="5cf8df24-2daf-44f4-b6fa-4a81914120c7" InformativeScreenshot="c10a6e44e54e5032fe89fe2c251437ae.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Download Client and Support' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Close'" sap:VirtualizedContainerService.HintSize="488.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="620afafe-fcd2-4fb8-9df3-466f2f4ea49e" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="1482, 15, 43, 43" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Close'" FullSelectorArgument="&lt;ctrl name='ACME System 1 - Log In - Memory usage - 58.5 MB - Google Chrome' role='pane' /&gt;&lt;ctrl name='ACME System 1 - Log In - Memory usage - 58.5 MB' role='page tab' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='ACME System 1 - Log In - Memory usage - 58.5 MB - Google Chrome' role='pane' /&gt;&lt;ctrl name='ACME System 1 - Log In - Memory usage - 58.5 MB' role='page tab' /&gt;&lt;ctrl name='Close' role='push button' automationid='' check:text='Close' /&gt;" Guid="c0176c37-d22f-4f27-9f0e-5af8106d55eb" InformativeScreenshot="9e5bc5b96047f4beca2af96d9d46a294.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='ACME System 1 - Log In - Google Chrome' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
-              </uix:NClick.Target>
-            </uix:NClick>
+            <ui:UiElementExists DisplayName="Element Exists 'H1'" Exists="[logoutExists]" sap:VirtualizedContainerService.HintSize="614.6666666666666,107.33333333333333" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="92b22e17-f894-44e2-ace1-2fa8b30a13ad" InformativeScreenshot="c071fc4bb362aa2422bac8c22becedd8" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;&lt;webctrl aaname='Log Out' parentid='bs-example-navbar-collapse-1' tag='A' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="614.6666666666666,2152" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+              <ui:IfElseIf.ConditionBlocks>
+                <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                  <ui:IfElseIfBlock BlockType="If" Condition="[logoutExists]">
+                    <ui:IfElseIfBlock.Then>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="550.6666666666666,1726.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <TryCatch DisplayName="Try Catch- hover over the user options button" sap:VirtualizedContainerService.HintSize="488.6666666666667,445.3333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+                          <TryCatch.Try>
+                            <uix:NHover DisplayName="Hover 'User options'" sap:VirtualizedContainerService.HintSize="334,159.33333333333334" HoverTime="3" sap2010:WorkflowViewState.IdRef="NHover_2" ScopeIdentifier="620afafe-fcd2-4fb8-9df3-466f2f4ea49e" Version="V3">
+                              <uix:NHover.Target>
+                                <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/" CvElementArea="205, 481, 307, 75" CvTextArea="297, 503, 153, 30" CvTextArgument="User options" CvType="Button" DesignTimeRectangle="209, 485, 300, 68" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'User options'" FullSelectorArgument="&lt;webctrl parentid='dashmenu' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='dashmenu' tag='BUTTON' type='button' class='btn btn-default btn-lg dropdown-toggle' aaname='                  User options' check:innerText='User options' /&gt;" Guid="36d4314e-1e82-4770-9547-804c31009a38" InformativeScreenshot="dad6d41a237347f3d83360e2d7d37bc7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                              </uix:NHover.Target>
+                            </uix:NHover>
+                          </TryCatch.Try>
+                          <TryCatch.Catches>
+                            <Catch x:TypeArguments="uc:ElementNotFoundException" sap:VirtualizedContainerService.HintSize="404.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_13">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ActivityAction x:TypeArguments="uc:ElementNotFoundException">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="uc:ElementNotFoundException" Name="exception" />
+                                </ActivityAction.Argument>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,57.333333333333336" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Error occured: User interface element not found&quot;]" />
+                              </ActivityAction>
+                            </Catch>
+                            <Catch x:TypeArguments="ui:SelectorNotFoundException" sap:VirtualizedContainerService.HintSize="404.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_14">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ActivityAction x:TypeArguments="ui:SelectorNotFoundException">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="ui:SelectorNotFoundException" Name="exception" />
+                                </ActivityAction.Argument>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,57.333333333333336" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Error occured: selector not found&quot;]" />
+                              </ActivityAction>
+                            </Catch>
+                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_15">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ActivityAction x:TypeArguments="s:Exception">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                </ActivityAction.Argument>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,57.333333333333336" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Error occured&quot;]" />
+                              </ActivityAction>
+                            </Catch>
+                          </TryCatch.Catches>
+                        </TryCatch>
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="488.6666666666667,532.6666666666666" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+                          <TryCatch.Try>
+                            <Sequence sap:VirtualizedContainerService.HintSize="450,270" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="5" DisplayName="Click 'Download Client'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="620afafe-fcd2-4fb8-9df3-466f2f4ea49e" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/home" DesignTimeRectangle="540, 429, 373, 39" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'Download Client'" FullSelectorArgument="&lt;webctrl parentid='dashmenu' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='dashmenu' tag='A' type='' class='' aaname='Download Client and Support' check:innerText='Download Client and Support' /&gt;" Guid="1a81da65-5728-43b7-8a1b-493ae1dfdb19" InformativeScreenshot="a52224f15eb323c459010a50ebe639f0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                            </Sequence>
+                          </TryCatch.Try>
+                          <TryCatch.Catches>
+                            <Catch x:TypeArguments="ui:SelectorNotFoundException" sap:VirtualizedContainerService.HintSize="454.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_16">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ActivityAction x:TypeArguments="ui:SelectorNotFoundException">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="ui:SelectorNotFoundException" Name="exception" />
+                                </ActivityAction.Argument>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,57.333333333333336" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Error occured: selector not found&quot;]" />
+                              </ActivityAction>
+                            </Catch>
+                            <Catch x:TypeArguments="uc:ElementNotFoundException" sap:VirtualizedContainerService.HintSize="454.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_17">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ActivityAction x:TypeArguments="uc:ElementNotFoundException">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="uc:ElementNotFoundException" Name="exception" />
+                                </ActivityAction.Argument>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,57.333333333333336" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Error occured: element not found&quot;]" />
+                              </ActivityAction>
+                            </Catch>
+                          </TryCatch.Catches>
+                        </TryCatch>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="5" DisplayName="Click 'Download'" sap:VirtualizedContainerService.HintSize="488.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="620afafe-fcd2-4fb8-9df3-466f2f4ea49e" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/download-client" CvElementArea="653, 661, 204, 79" CvTextArea="693, 687, 120, 22" CvTextArgument="Download" CvType="Button" DesignTimeRectangle="659, 665, 194, 70" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'Download'" FullSelectorArgument="&lt;webctrl class='btn' parentid='pagetext' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl class='btn' parentid='pagetext' tag='A' type='' aaname='Download' check:innerText='Download' /&gt;" Guid="36c4f2e2-39a2-4b17-a5b0-ccd5760fec5e" InformativeScreenshot="c18d463e909875ed1c68fc3392a0a49b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Download Client and Support' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Log Out'" sap:VirtualizedContainerService.HintSize="488.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="620afafe-fcd2-4fb8-9df3-466f2f4ea49e" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/download-client" CvTextArea="1737, 227, 77, 22" CvTextArgument="Log Out" CvType="Text" DesignTimeRectangle="1716, 200, 120, 75" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'Log Out'" FullSelectorArgument="&lt;webctrl aaname='Log Out' parentid='bs-example-navbar-collapse-1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Log Out' parentid='bs-example-navbar-collapse-1' tag='A' type='' class='' check:innerText='Log Out' /&gt;" Guid="5cf8df24-2daf-44f4-b6fa-4a81914120c7" InformativeScreenshot="c10a6e44e54e5032fe89fe2c251437ae.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Download Client and Support' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Close'" sap:VirtualizedContainerService.HintSize="488.6666666666667,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="620afafe-fcd2-4fb8-9df3-466f2f4ea49e" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable DesignTimeRectangle="1482, 15, 43, 43" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Close'" FullSelectorArgument="&lt;ctrl name='ACME System 1 - Log In - Memory usage - 58.5 MB - Google Chrome' role='pane' /&gt;&lt;ctrl name='ACME System 1 - Log In - Memory usage - 58.5 MB' role='page tab' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='ACME System 1 - Log In - Memory usage - 58.5 MB - Google Chrome' role='pane' /&gt;&lt;ctrl name='ACME System 1 - Log In - Memory usage - 58.5 MB' role='page tab' /&gt;&lt;ctrl name='Close' role='push button' automationid='' check:text='Close' /&gt;" Guid="c0176c37-d22f-4f27-9f0e-5af8106d55eb" InformativeScreenshot="9e5bc5b96047f4beca2af96d9d46a294.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='ACME System 1 - Log In - Google Chrome' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </ui:IfElseIfBlock.Then>
+                  </ui:IfElseIfBlock>
+                  <ui:IfElseIfBlock BlockType="Else">
+                    <ui:IfElseIfBlock.Then>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,187.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="388,76.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;There was a problem logging in. Exiting the process&quot;]" />
+                      </Sequence>
+                    </ui:IfElseIfBlock.Then>
+                  </ui:IfElseIfBlock>
+                </sc:BindingList>
+              </ui:IfElseIf.ConditionBlocks>
+            </ui:IfElseIf>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
